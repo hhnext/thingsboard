@@ -179,6 +179,7 @@ public class LwM2MTransportConfigServer {
         } catch (KeyStoreException e) {
             log.error("Uninitialized keystore [{}]", keyStoreValue.toString());
         }
+       String s=getBaseDirPath();
         Path keyStorePath = (keyStorePathFile != null && !keyStorePathFile.isEmpty()) ? Paths.get(keyStorePathFile) :
                 (new File(Paths.get(getBaseDirPath(), PATH_DATA, KEY_STORE_DEFAULT_RESOURCE_PATH, KEY_STORE_DEFAULT_FILE).toUri()).isFile()) ?
                         Paths.get(getBaseDirPath(), PATH_DATA, KEY_STORE_DEFAULT_RESOURCE_PATH, KEY_STORE_DEFAULT_FILE) :
@@ -212,6 +213,7 @@ public class LwM2MTransportConfigServer {
         } else {
             FULL_FILE_PATH = Paths.get(BASE_DIR_PATH);
         }
-        return FULL_FILE_PATH.toUri().getPath();
+//        return FULL_FILE_PATH.toUri().getPath();
+        return FULL_FILE_PATH.toUri().getPath().substring(1);
     }
 }

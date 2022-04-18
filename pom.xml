@@ -755,6 +755,7 @@
                             </pluginExecutions>
                         </lifecycleMappingMetadata>
                     </configuration>
+
                 </plugin>
                 <plugin>
                     <groupId>com.mycila</groupId>
